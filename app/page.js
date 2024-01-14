@@ -1,9 +1,10 @@
-import Image from 'next/image'
+import HomePage from "@/Components/HomePage"
+import react from "react"
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>E-library</h1>
+    <main className="">
+      <HomePage/>
     </main>
   )
 }
