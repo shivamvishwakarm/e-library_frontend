@@ -2,14 +2,81 @@ import React from 'react';
 import Nav from './Nav';
 import { FaSearch, FaArrowRight } from 'react-icons/fa';
 import Card from './Card';
+import Footer from './Footer';
+import { CarouselSpacing } from './CarouselSpacing';
+
+
+const books = [
+  {
+    name: "Book 1",
+    thumbnail: 'https://images-na.ssl-images-amazon.com/images/I/51ZU%2BCvkTyL._SX331_BO1,204,203,200_.jpg',
+    description: "This is a description of Book 1.",
+    pdfLink: "https://example.com/book1.pdf",
+    language: "English",
+    author: "Author 1",
+    subject: "Subject 1"
+  },
+  {
+    name: "Book 2",
+    thumbnail: 'https://images-na.ssl-images-amazon.com/images/I/51ZU%2BCvkTyL._SX331_BO1,204,203,200_.jpg',
+    description: "This is a description of Book 2.",
+    pdfLink: "https://example.com/book2.pdf",
+    language: "English",
+    author: "Author 2",
+    subject: "Subject 2"
+  },
+
+  {
+    name: "Book 3",
+    thumbnail: 'https://images-na.ssl-images-amazon.com/images/I/51ZU%2BCvkTyL._SX331_BO1,204,203,200_.jpg',
+    description: "This is a description of Book 3.",
+    pdfLink: "https://example.com/book3.pdf",
+    language: "English",
+    author: "Author 3",
+    subject: "Subject 3"
+  },
+  {
+    name: "Book 3",
+    thumbnail: 'https://images-na.ssl-images-amazon.com/images/I/51ZU%2BCvkTyL._SX331_BO1,204,203,200_.jpg',
+    description: "This is a description of Book 3.",
+    pdfLink: "https://example.com/book3.pdf",
+    language: "English",
+    author: "Author 3",
+    subject: "Subject 3"
+  },
+  {
+    name: "Book 3",
+    thumbnail: 'https://images-na.ssl-images-amazon.com/images/I/51ZU%2BCvkTyL._SX331_BO1,204,203,200_.jpg',
+    description: "This is a description of Book 3.",
+    pdfLink: "https://example.com/book3.pdf",
+    language: "English",
+    author: "Author 3",
+    subject: "Subject 3"
+  },
+  {
+    name: "Book 3",
+    thumbnail: 'https://images-na.ssl-images-amazon.com/images/I/51ZU%2BCvkTyL._SX331_BO1,204,203,200_.jpg',
+    description: "This is a description of Book 3.",
+    pdfLink: "https://example.com/book3.pdf",
+    language: "English",
+    author: "Author 3",
+    subject: "Subject 3"
+  },
+
+]
+
+
+
 
 
 const HomePage = () => {
   return (
     <main className="flex flex-col p-4">
       <Nav />
-      <div>
-        <h1 className='font-black tracking-extra-wide text-red-600 text-center text-9xl mx-auto'>DARUL IQRA</h1>
+      <div className="">
+        <h1 className='font-black tracking-extra-wide text-red-600 text-center  mx-auto sm:text-7xl md:text-8xl lg:text-9xl'>
+          DARUL IQRA
+         </h1>
       </div>
 
       <div className="flex justify-center items-center my-9">
@@ -25,32 +92,15 @@ const HomePage = () => {
       </div>
 
       <div className="flex flex-wrap justify-center">
-        <Card book={{
-          title: 'The Alchemist',
-          thumbnail: 'https://images-na.ssl-images-amazon.com/images/I/51ZU%2BCvkTyL._SX331_BO1,204,203,200_.jpg'
-        }} />
-        <Card book={{
-          title: 'The Alchemist',
-          thumbnail: 'https://images-na.ssl-images-amazon.com/images/I/51ZU%2BCvkTyL._SX331_BO1,204,203,200_.jpg'
-        }} />
-        <Card book={{
-          title: 'The Alchemist',
-          thumbnail: 'https://images-na.ssl-images-amazon.com/images/I/51ZU%2BCvkTyL._SX331_BO1,204,203,200_.jpg'
-        }} />
-        <Card book={{
-          title: 'The Alchemist',
-          thumbnail: 'https://images-na.ssl-images-amazon.com/images/I/51ZU%2BCvkTyL._SX331_BO1,204,203,200_.jpg'
-        }} />
-        <Card book={{
-          title: 'The Alchemist',
-          thumbnail: 'https://images-na.ssl-images-amazon.com/images/I/51ZU%2BCvkTyL._SX331_BO1,204,203,200_.jpg'
-        }} />
-        <Card book={{
-          title: 'The Alchemist',
-          thumbnail: 'https://images-na.ssl-images-amazon.com/images/I/51ZU%2BCvkTyL._SX331_BO1,204,203,200_.jpg'
-        }} />
+        {books.map((book, index) => (
+          <Card key={index} book={book} />
+        ))}
         
       </div>
+
+      <CarouselSpacing />
+
+      <Footer/>
     </main>
   )
 }
